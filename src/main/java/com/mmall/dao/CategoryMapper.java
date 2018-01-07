@@ -1,6 +1,6 @@
-package com.mmail.dao;
+package com.mmall.dao;
 
-import com.mmail.pojo.Category;
+import com.mmall.pojo.Category;
 
 public interface CategoryMapper {
     int deleteByPrimaryKey(Integer id);

@@ -1,6 +1,6 @@
-package com.mmail.dao;
+package com.mmall.dao;
 
-import com.mmail.pojo.Cart;
+import com.mmall.pojo.Cart;
 
 public interface CartMapper {
     int deleteByPrimaryKey(Integer id);

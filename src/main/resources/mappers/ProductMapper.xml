@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.mmail.dao.ProductMapper" >
-  <resultMap id="BaseResultMap" type="com.mmail.pojo.Product" >
+<mapper namespace="com.mmall.dao.ProductMapper" >
+  <resultMap id="BaseResultMap" type="com.mmall.pojo.Product" >
     <constructor >
       <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="category_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
@@ -31,7 +31,7 @@
     delete from mmall_product
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.mmail.pojo.Product" >
+  <insert id="insert" parameterType="com.mmall.pojo.Product" >
     insert into mmall_product (id, category_id, name, 
       subtitle, main_image, sub_images, 
       detail, price, stock, 
@@ -43,7 +43,7 @@
       #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.mmail.pojo.Product" >
+  <insert id="insertSelective" parameterType="com.mmall.pojo.Product" >
     insert into mmall_product
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -122,7 +122,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.mmail.pojo.Product" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.mmall.pojo.Product" >
     update mmall_product
     <set >
       <if test="categoryId != null" >
@@ -161,7 +161,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.mmail.pojo.Product" >
+  <update id="updateByPrimaryKey" parameterType="com.mmall.pojo.Product" >
     update mmall_product
     set category_id = #{categoryId,jdbcType=INTEGER},
       name = #{name,jdbcType=VARCHAR},
