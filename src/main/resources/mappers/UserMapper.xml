@@ -180,4 +180,9 @@
      select count(1) from mmall_user
     where username = #{username} and question = #{question} and answer = #{answer}
   </select>
+
+  <update id="updatePasswordByUsername" parameterType="map">
+     update mmall_user set password =#{md5Password}, update_time=now() where username=#{username}
+
+  </update>
 </mapper>

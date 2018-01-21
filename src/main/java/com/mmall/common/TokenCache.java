@@ -12,6 +12,8 @@ public class TokenCache {
 
     private static Logger logger = LoggerFactory.getLogger(TokenCache.class);
 
+    public static final String TOKEN_PREFIX = "token_";
+
     private static LoadingCache<String, String> localCache = CacheBuilder
             .newBuilder()
             .initialCapacity(1000)
