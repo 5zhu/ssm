@@ -64,4 +64,18 @@ public interface UserService {
      * @return
      */
     ServerResponse<String> resetPassword(String passwordOld, String passwordNew, User user);
+
+    /**
+     * 修改用户信息
+     * @param user
+     * @return
+     */
+    ServerResponse<User> updateUserInformation(User user);
+
+    /**
+     * 获取用户信息
+     * @param id
+     * @return
+     */
+    ServerResponse<User> getInformation(Integer id);
 }
