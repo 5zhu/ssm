@@ -120,5 +120,14 @@ public class UserController {
         return userService.forgetResetPassword(username, passwordNew, forgetToken);
     }
 
+    public ServerResponse<String> resetPassword(HttpSession session, String passwordOld, String passwordNew){
+        User user = (User)session.getAttribute(Const.CURRENT_USER);
+        if(user == null){
+            return ServerResponse.createByErrorMessage("用户未登录");
+        }
+
+        return userService.resetPassword(passwordOld, passwordNew, user);
+    }
+
 
 }

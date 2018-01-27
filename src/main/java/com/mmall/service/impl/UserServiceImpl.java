@@ -129,4 +129,11 @@ public class UserServiceImpl implements UserService {
 
         return ServerResponse.createByErrorMessage("修改密码失败");
     }
+
+    @Override
+    public ServerResponse<String> resetPassword(String passwordOld, String passwordNew, User user) {
+        //防止横向越权，要校验用户旧密码
+
+        return null;
+    }
 }
