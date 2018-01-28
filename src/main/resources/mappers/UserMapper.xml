@@ -157,7 +157,7 @@
     where username = #{username}
   </select>
   
-  <select id="selectLogin" resultMap="BaseResultMap" parameterMap="map">
+  <select id="selectLogin" resultMap="BaseResultMap" parameterType="map">
     SELECT
     <include refid="Base_Column_List" />
     from mmall_user
