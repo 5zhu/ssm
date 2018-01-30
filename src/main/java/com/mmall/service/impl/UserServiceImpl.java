@@ -176,4 +176,12 @@ public class UserServiceImpl implements UserService {
         user.setPassword(org.apache.commons.lang3.StringUtils.EMPTY);
         return ServerResponse.createBySuccess(user);
     }
+
+    @Override
+    public ServerResponse checkAdminRole(User user) {
+        if(user != null && user.getRole().intValue() == Const.Role.ROLE_ADMIN){
+            ServerResponse.createBySuccess();
+        }
+        return ServerResponse.createByError();
+    }
 }

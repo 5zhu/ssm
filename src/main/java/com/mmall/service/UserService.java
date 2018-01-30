@@ -78,4 +78,6 @@ public interface UserService {
      * @return
      */
     ServerResponse<User> getInformation(Integer id);
+
+    ServerResponse checkAdminRole(User user);
 }
