@@ -82,5 +82,21 @@ public class CategoryManageController {
         }
     }
 
+    @ResponseBody
+    @RequestMapping(value = "get_deepcategory.do", method = RequestMethod.GET)
+    public ServerResponse<List<Category>> getDeepChildrenParallelCategory(HttpSession session,
+        @RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId){
+        User user = (User) session.getAttribute(Const.CURRENT_USER);
+        if(user == null){
+            return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(), "用户未登录");
+        }
+        if(userService.checkAdminRole(user).isSuccess()){
+            //查询子节点的信息，递归
+            return categoryService.getCategoryAndChildrenById(categoryId);
+        }else{
+            return ServerResponse.createByErrorMessage("无操作权限，需要管理员权限");
+        }
+    }
+
 
 }
