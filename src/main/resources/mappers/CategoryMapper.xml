@@ -116,4 +116,11 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectCategoryChildrenByParentId" parameterType="int" resultMap="BaseResultMap">
+      SELECT
+      <include refid="Base_Column_List"/>
+      from mmall_category
+    WHERE parent_id= #{parent_id}
+  </select>
 </mapper>

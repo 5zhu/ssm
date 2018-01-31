@@ -1,7 +1,10 @@
 package com.mmall.service;
 
 import com.mmall.common.ServerResponse;
+import com.mmall.pojo.Category;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * CategoryService接口
@@ -25,4 +28,10 @@ public interface CategoryService {
     ServerResponse updateCategory(Integer categoryId, String categoryName);
 
 
+    /**
+     * 查询子节点，不递归
+     * @param categoryId
+     * @return
+     */
+    ServerResponse<List<Category>> getChildrenParallelCategory(Integer categoryId);
 }
